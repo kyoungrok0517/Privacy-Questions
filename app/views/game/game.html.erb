@@ -5,3 +5,31 @@
 <p>
 	User ID: <%= @user_id %>
 </p>
+
+<% @questions.each do |q| %>
+<div class="question">
+	<%= image_tag(q.photo.url(:large)) %>
+
+	<br>
+
+	<b>Question ID: <%= q.id %></b>
+
+	<br>
+
+	<b>Question Type: <%= q.question_type %></b>
+
+	<form method="post", action="/">
+		<label><%= q.question_title %></label>
+		<input type="hidden" name="user_id" value="<%= @user.id %>">
+		<input type="hidden" name="question_id" value="<%= q.id %>">
+		<% q.question_selection.to_s.split('|').each_with_index do |selection, i| %>
+		<br>
+		<label for="<%= 'answer-' + q.id.to_s + '-' + i.to_s %>">
+			<input type="radio" name="answer" value="<%= selection %>" id="<%= 'answer-' + q.id.to_s + '-' + i.to_s %>">
+			<%= selection %>
+		</label>
+		<% end %>
+	</form>
+
+</div>
+<% end %>

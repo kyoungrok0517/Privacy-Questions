@@ -20,7 +20,21 @@
 </div>
 
 <div class="field">
+	<%= f.label :question_type %>
+	<br />
 	<%= f.select(:question_type, [['scale', 'scale'], ['who', 'who'], ['what', 'what']]) %>
+</div>
+
+<div class="field">
+	<%= f.label :question_title %>
+	<br />
+	<%= f.text_field :question_title %>
+</div>
+
+<div class="field">
+	<%= f.label :question_selection %>
+	<br />
+	<%= f.text_field :question_selection %>
 </div>
 
 <div class="actions">

@@ -3,6 +3,8 @@ class GameController < ApplicationController
     @questions = Question.all.sample(10)
     @username = session[:username]
     @user_id = session[:user_id]
+    @user = session[:user]
+    @answer = Answer.new
 
     respond_to do |format|
       format.html
