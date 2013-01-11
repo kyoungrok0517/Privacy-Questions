@@ -43,8 +43,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     # save the user information in a session
-    session[:username] = @user[:username]
-    session[:user_id] = @user[:id]
+    session[:username] = @user.username
+    session[:user_id] = @user.id
 
     respond_to do |format|
       if @user.save
