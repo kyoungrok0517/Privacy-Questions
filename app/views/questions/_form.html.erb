@@ -20,7 +20,7 @@
 </div>
 
 <div class="field">
-	<%= f.select(:question_type, @question_types.map {|u| [u.title, u.id]}) %>
+	<%= f.select(:question_type, [['scale', 'scale'], ['who', 'who'], ['what', 'what']]) %>
 </div>
 
 <div class="actions">

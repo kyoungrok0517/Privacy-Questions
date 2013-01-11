@@ -1,6 +1,4 @@
 PrivacyQuestions::Application.routes.draw do
-  resources :question_types
-
   resources :users
 
   resources :questions
