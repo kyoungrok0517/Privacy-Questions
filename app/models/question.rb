@@ -7,4 +7,12 @@ class Question < ActiveRecord::Base
                     :url => "/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/:attachment/:id/:style/:basename.:extension"
 
+  def as_json(options)
+    super(:methods => [:resource_url])
+  end
+  
+  def resource_url
+    @resource_url = self.photo.url(:large)
+  end
+
 end
