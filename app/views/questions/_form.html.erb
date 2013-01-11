@@ -14,13 +14,13 @@
 <% end %>
 
 <div class="field">
-	<%= f.label :resource_url %>
+	<%= f.label :photo %>
 	<br />
-	<%= f.text_field :resource_url %>
+	<%= f.file_field :photo %>
 </div>
 
-<div>
-	<%= f.select(:type, [['scale', 'scale'], ['who', 'who'], ['what', 'what']]) %>
+<div class="field">
+	<%= f.select(:question_type, [['scale', 'scale'], ['who', 'who'], ['what', 'what']]) %>
 </div>
 
 <div class="actions">
