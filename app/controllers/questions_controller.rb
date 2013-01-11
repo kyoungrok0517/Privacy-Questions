@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def random
-    @questions = Question.all.sample(3)
+    @questions = Question.all.sample(10)
     
     respond_to do |format|
       format.html

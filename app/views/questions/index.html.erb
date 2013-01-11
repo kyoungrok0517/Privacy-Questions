@@ -1,7 +1,10 @@
 <h1>Listing questions</h1>
 
-<table>
+<table style="width: 50%; text-align: center;">
   <tr>
+    <th>ID</th>
+    <th>Type</th>
+    <th>Photo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +12,15 @@
 
 <% @questions.each do |question| %>
   <tr>
+  	<td>
+  		<%= question.id %>
+  	</td>
+  	<td>
+  		<%= question.question_type %>
+  	</td>
+  	<td>
+  		<%= image_tag(question.photo.url(:thumb)) %>
+  	</td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
