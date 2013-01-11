@@ -1,10 +1,11 @@
 PrivacyQuestions::Application.routes.draw do
   resources :users
 
-  resources :questions do
-     get 'random', :on => :collection
-  end
+  resources :questions
+  
+  match '/game/' => "game#game"
 
+  root :to => 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

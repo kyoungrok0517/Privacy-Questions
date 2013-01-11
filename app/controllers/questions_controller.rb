@@ -1,13 +1,4 @@
 class QuestionsController < ApplicationController
-  def random
-    @questions = Question.all.sample(10)
-    
-    respond_to do |format|
-      format.html
-      format.json { render json: @questions }
-    end
-  end
-  
   # GET /questions
   # GET /questions.json
   def index
